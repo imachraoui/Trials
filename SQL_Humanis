@@ -1,0 +1,6 @@
+select distinct substring(TRIM(c.Siret),1,9) as siren_contrat,c.NumAdherent,c.NumAssure, c.NumAssure, s.xvar71 as siren, s.xnum26 as nb_assurables
+from INFOCENTRE.TContratColl c
+left join DECLIC.So0 s
+on s.xvar71 = substring(TRIM(c.Siret,1,9))
+where s.template is null
+and c.DateEffet <=  and c.DateRadiation >
